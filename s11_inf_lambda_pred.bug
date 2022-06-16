@@ -1,0 +1,15 @@
+#
+# Gaussian model with unknown mean and sigma
+#
+
+model {
+
+ for (i in 1:length(X)) { 
+X[i] ~ dpois(lambda);  
+} 
+
+lambda ~ dexp(0.00001); 
+
+Y ~ dpois(lambda); 
+
+}
